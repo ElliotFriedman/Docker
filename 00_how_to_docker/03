@@ -1,1 +1,4 @@
+# run this in the terminal, don't run this as a shell script
+# won't work otherwise
+
 eval $(docker-machine env Char)

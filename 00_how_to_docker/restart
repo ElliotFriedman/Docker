@@ -1,1 +1,3 @@
+eval $(docker-machine env Char)
+docker system prune -a
 docker-machine restart Char
