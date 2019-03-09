@@ -1,1 +1,2 @@
-docker-machine create Char --driver virtualbox 
+docker-machine create Char --driver=virtualbox 
+docker-machine regenerate-certs Char

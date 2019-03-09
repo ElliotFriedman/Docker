@@ -4,4 +4,4 @@
 # -d daemon
 # store data in the volume hatchery inside the file /etc/mysql
 
-docker run -d  --name spawning-pool --restart on-failure --mount type=volume,source=hatchery,destination=/etc/mysql --env MYSQL_DATABASE="zerglings" --env MYSQL_ROOT_PASSWORD=Kerrigan mysql
+docker run --name spawning-pool --restart on-failure -d -v hatchery:/var/lib/mysql -e MYSQL_ROOT_PASSWORD -e MYSQL_DATABASE=zerglings mysql
