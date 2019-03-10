@@ -1,1 +1,1 @@
-docker ps -a -f status=running
+docker restart overlord

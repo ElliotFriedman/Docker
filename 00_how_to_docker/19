@@ -1,0 +1,12 @@
+
+# go into the Char vm and make a directory 
+docker-machine ssh Char mkdir /home/python
+# copy the app file into the new dir
+docker-machine scp app.py Char:/home/python
+# run a container with python:2-slim
+# map port 3000 of Char to the port 3000 of the Abathur container
+# fill /root with what is inside of /home/python 
+docker run --name Abathur -d -t -p 3000:3000 -v /home/python:/root python:2-slim
+# set environment variable inside Abathur, install flask, then run the flask app and display content to port 3000 
+# specifying port 0.0.0.0 as host opens this application to the whole world so that our container can call this on port 300
+docker exec --env FLASK_APP=/root/app.py Abathur pip install flask && flask run --host=0.0.0.0 --port=3000
