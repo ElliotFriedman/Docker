@@ -1,0 +1,1 @@
+docker service ps engineering-bay |  awk -F "        " '{print $1}' | tail -n1 > out && docker service logs $(cat out) && rm out
