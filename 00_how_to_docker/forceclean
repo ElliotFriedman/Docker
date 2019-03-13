@@ -5,5 +5,5 @@ docker kill overlord
 docker rm overlord 
 
 docker-machine kill Char
-docker-machine rm Char
+docker-machine rm -f Char
 
