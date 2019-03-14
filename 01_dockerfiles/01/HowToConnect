@@ -1,0 +1,4 @@
+Open up teamspeak client
+Find ip address of docker container Char, should look like this: "192.168.99.100"
+Put that into connect bar in teamspeak server address.
+Click connect and paste in connection key
